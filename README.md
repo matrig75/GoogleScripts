@@ -19,3 +19,8 @@ Feel to use them for your private purpose, but please, respect any author and co
 ## Tracking the project ...
 
 * 2018/05/01 - First Commit
+* 2018/05/01 - Range Script adjusted
+
+## Disclaimer
+
+> In the various documents, You may find mistranslations, grammar errors, typos, feel free to correct them :-)

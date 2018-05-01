@@ -6,19 +6,21 @@
     (c) Matt Girard - La Baleine Basque - 2018 
 */
 
-function checkColumnsTitle(e) {
+function checkColumnsTitles(e) {
 
     const ss = SpreadsheetApp.getActiveSpreadsheet();
 
-    if (typeof (e) !== String) {
+    if (e === undefined) {
         return new Error("Error: please indicate a correct sheet name");
     } else {
-        const sheet = e;
+        const sheet = ss.getSheetByName(e);
     }
 
     const QtyColumns = sheet.getDataRange().getLastColumn();
-    const intitules = sheet.getRange(1, QtyColumns).getValues();
+    const intitules = sheet.getRange(1, 1, 1, QtyColumns).getValues();
 
-
+    Logger.log(QtyColumns);
+    Logger.log(intitules);
+    return intitules;
 
 }

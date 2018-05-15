@@ -1,3 +1,11 @@
+/* Disclaimer
+    Created By Matt Girard
+    https://labaleinebasque.fr
+    Feel free to use, modify and spread around you,
+    please be kind, keep this comment in the file or mention my website
+    (c) Matt Girard - La Baleine Basque - 2018 
+*/
+
 function dailyCheckMail(recipient, sujet, titles, content) {
 
     const envProd = true;

@@ -20,6 +20,7 @@ Feel to use them for your private purpose, but please, respect any author and co
 
 * 2018/05/01 - First Commit
 * 2018/05/01 - Range Script adjusted
+* 2018/05/15 - 2nd commit, added few files dedicated to range and mail operations
 
 ## Disclaimer
 

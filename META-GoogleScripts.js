@@ -1,3 +1,11 @@
+/* Disclaimer
+    Created By Matt Girard
+    https://labaleinebasque.fr
+    Feel free to use, modify and spread around you,
+    please be kind, keep this comment in the file or mention my website
+    (c) Matt Girard - La Baleine Basque - 2018 
+*/
+
 // Script pour appeler une page, et retourner le contenu HTML sous forme de String, le code réponse et un timestamp
 
 function scrapSite(url) {

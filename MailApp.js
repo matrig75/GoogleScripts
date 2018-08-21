@@ -10,7 +10,7 @@ function dailyCheckMail(recipient, sujet, titles, content) {
 
     const envProd = true;
 
-    var html = formatHtmlfromArrays(titles, content);
+    var html = formatHtmlBodyfromArrays(titles, content);
 
     if (envProd) {
 
@@ -22,7 +22,7 @@ function dailyCheckMail(recipient, sujet, titles, content) {
     }
 }
 
-function formatHtmlfromArrays(titles, content) {
+function formatHtmlBodyfromArrays(titles, content) {
     var htmlBody = "";
 
     htmlBody += '<html><body><table width=auto cellpadding=0 border=0 cellspacing=0><tr bgcolor="#ddd">';
@@ -47,6 +47,60 @@ function formatHtmlfromArrays(titles, content) {
     });
 
     htmlBody += '</tr></table></body></html>';
+
+    return htmlBody;
+}
+
+function formatHtmlTablefromArrays(titles, content) {
+    var htmlBody = "<br>";
+
+    htmlBody += '<table width=auto cellpadding=0 border=0 cellspacing=0><tr bgcolor="#ddd">';
+
+    titles.forEach(function (elementTitre) {
+        htmlBody += "<td style='padding: 5px 10px;  background-color: navyblue; color: white; text-align: center'>" + elementTitre + '</td>';
+    });
+
+    htmlBody += '</tr><tr>';
+
+    content.forEach(function (tableRow) {
+        tableRow.forEach(function (elementContent) {
+            if (Array.isArray(elementContent)) {
+                elementContent.forEach(function (sousElement) {
+                    htmlBody += "<td style='padding: 5px 10px; text-align: center'>" + sousElement + '</td>';
+                });
+            } else {
+                htmlBody += "<td style='padding: 5px 10px; text-align: center'>" + elementContent + '</td>';
+            }
+        });
+        htmlBody += '</tr><tr>'
+    });
+
+    htmlBody += '</tr></table><br>';
+
+    return htmlBody;
+}
+
+function formatHtmlListfromArrays(titles, content) {
+    var htmlBody = "<body>";
+
+    titles.forEach(function (elementTitre) {
+        htmlBody += "<br><h2>" + elementTitre + '</h2><ul>';
+    });
+
+    content.forEach(function (tabs) {
+        tabs.forEach(function (listElement) {
+            if (Array.isArray(listElement)) {
+                listElement.forEach(function (sousElement) {
+                    htmlBody += "<li>" + sousElement + '</li>';
+                });
+            } else {
+                htmlBody += "<li>" + listElement + '</li>';
+            }
+        });
+        htmlBody += '</ul>'
+    });
+
+    htmlBody += '<br><p>En cas de problème</p></body>';
 
     return htmlBody;
 }

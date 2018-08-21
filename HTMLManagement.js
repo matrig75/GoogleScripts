@@ -46,7 +46,6 @@ function getDataFromHTML(textHTML, start, end) {
   } else {
    
     var searchstring = start;
-    var toText = end;
     
     var indexStart = textHTML.search(start);
     var indexEnd = textHTML.search(end);
@@ -55,7 +54,7 @@ function getDataFromHTML(textHTML, start, end) {
    
     var pos = indexStart + longueur;
     
-    var data = text.substring(pos, indexEnd);
+    var data = textHTML.substring(pos, indexEnd);
     
     return data;
   };
